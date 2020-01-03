@@ -1,0 +1,20 @@
+{% extends 'myweb/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container" style="margin-top: 50px">
+        <div class="card-deck">
+            <img src="{% static 'myweb/images/sc.jpg' %}" height="300" width="200">
+            <div class="card border-primary mb-3 mx-auto" style="max-width: 18rem;">
+                <div class="card-header">Quote of the Moment</div>
+                <div class="card-body text-primary">
+                    <h5 class="card-title">Thought</h5>
+                    <p class="card-text">
+                        {{ quotes }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

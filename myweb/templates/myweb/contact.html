@@ -1,0 +1,29 @@
+{% extends 'myweb/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6" style="margin-top: 75px">
+                <form action="{% url 'contact' %}" id="contact" method="post" style="margin-left: 400px">
+                    {% csrf_token %}
+                    <h2>Contact</h2>
+                    <fieldset style="margin-top: 10px">
+                        <input name="full_name" autofocus placeholder="Your name" required tabindex="1" type="text">
+                    </fieldset>
+                    <fieldset style="margin-top: 10px">
+                        <input name="email" placeholder="Your Email Address" type="email" tabindex="2" required>
+                    </fieldset>
+                    <fieldset style="margin-top: 10px">
+                        <input name="subject" autofocus placeholder="Subject" required tabindex="3" type="text">
+                    </fieldset>
+                    <fieldset style="margin-top: 10px">
+                        <textarea name="message" placeholder="Type your Message Here...." tabindex="4" required></textarea>
+                    </fieldset>
+                    <fieldset style="margin-top: 10px">
+                        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
